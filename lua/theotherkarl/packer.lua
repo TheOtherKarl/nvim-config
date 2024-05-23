@@ -58,7 +58,20 @@ return require('packer').startup(function(use)
 	use('tpope/vim-fugitive')
     use 'folke/tokyonight.nvim'
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+    use {
+      "catppuccin/nvim",
+      as = "catppuccin",
+      config = function ()
+        require('catppuccin').setup({
+          background = {
+            light =  "latte",
+            dark = "mocha"
+          },-- hejsan
+          transparent_background = true
+        })
+
+      end
+    }
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',

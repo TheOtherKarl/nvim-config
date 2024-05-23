@@ -1,6 +1,9 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>pv", vim.cmd.Neotree)
+vim.keymap.set("n", "<leader>pv", [[:Neotree toggle<cr>]])
+-- vim.keymap.set("n", "<leader>pv", vim.cmd.Neotree)
+-- vim.keymap.set("n", "<leader>pv", function ()
+--  vim.cmd.Neotree({ toggle = true })
+-- end)
 
 -- lsp_signature doesn't exists atm
 vim.keymap.set({ 'n' }, '<C-k>', function()
@@ -36,3 +39,11 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
 
 vim.keymap.set("n", "Q", "<nop>")
+vim.keymap.set("n", "<leader>y", "\"+y")
+
+
+-- marc keymaps
+vim.keymap.set("n", "<leader>do", function ()
+  vim.diagnostic.open_float()
+  print('open float')
+end)
